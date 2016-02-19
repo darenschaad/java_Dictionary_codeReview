@@ -12,6 +12,10 @@ public class Definition {
     mId = instances.size();
   }
 
+  public String getDescription() {
+    return mDescription;
+  }
+
 
 
 
