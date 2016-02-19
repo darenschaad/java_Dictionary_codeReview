@@ -16,6 +16,10 @@ public class Definition {
     return mDescription;
   }
 
+  public static ArrayList<Definition> all() {
+    return instances;
+  }
+
 
 
 
