@@ -39,4 +39,15 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Snow");
   }
 
+  @Test
+  public void definitionIsCreatedForAWordTest() {
+    goTo("http://localhost:4567/words/new");
+    fill("#name").with("Snow");
+    submit(".btn");
+    click("a", withText("Snow"));
+    fill("#description").with("Snow definition");
+    submit(".btn");
+    assertThat(pageSource()).contains("Snow definition");
+  }
+
 }

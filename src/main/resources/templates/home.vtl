@@ -1,14 +1,13 @@
-home.vtl
-<h1>Dictionary</h1>
-
-
-
-<h3>Words</h3>
+#if ($words.size() != 0)
+<h3>Words:</h3>
 <ul>
   #foreach($word in $words)
     <li><h3><a href="/words/$word.getId()">$word.getName()</a></h3></li>
   #end
 </ul>
+<h5>Click on a word to view definition/s or add definition/s.</h5>
+<hr>
+<br>
+#end
 
-
-<h4><a href="words/new">Add a New Word</a></h4>
+<h3><a href="words/new">Add a New Word</a></h3>

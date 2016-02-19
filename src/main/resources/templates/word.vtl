@@ -1,4 +1,4 @@
-word.vtl
+#if ($definitions.size() != 0)
 <h2>Here are the Definitions for $word.getName()</h2>
 
 <ul>
@@ -6,16 +6,21 @@ word.vtl
   <li><h3>$definition.getDescription()</h3></li>
 #end
 </ul>
+#else
+<h2>There are no definitions for $word.getName() yet. </h2>
+
+#end
+<hr>
+<br>
 
 <h4>Add a definition for this word:</h4>
 <form action="/words/:id" method="post">
   <input id="wordId" name="wordId" type= "hidden" value="$word.getId()">
   <div class="form-group">
-    <label for="description">list your definition for this word</label>
-    <input type="text" name="description" id="description" class="form-control">
+    <input type="text" name="description" id="description" class="form-control" placeholder="Type your definition here" required>
   </div>
-  <button type="submit" class="btn btn-success">Add Definition</button>
+  <button type="submit" class="btn btn-primary">Add Definition</button>
 </form>
 
 
-<a href="/">Return to Main Page</a>
+<h4><a href="/">Return to Main Page</a></h4>
