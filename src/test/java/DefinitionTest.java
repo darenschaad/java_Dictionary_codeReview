@@ -24,6 +24,12 @@ public class DefinitionTest {
     assertTrue(Definition.all().contains(secondDefinition));
   }
 
+  @Test
+  public void newId_definitionInstantiatesWithAnId_true() {
+    Definition myDefinition = new Definition("To sleep");
+    assertEquals(Definition.all().size(), myDefinition.getId());
+  }
+
 
 
 

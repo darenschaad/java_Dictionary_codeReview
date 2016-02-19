@@ -20,6 +20,10 @@ public class Definition {
     return instances;
   }
 
+  public int getId() {
+    return mId;
+  }
+
 
 
 
