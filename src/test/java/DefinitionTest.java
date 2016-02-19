@@ -30,9 +30,24 @@ public class DefinitionTest {
     assertEquals(Definition.all().size(), myDefinition.getId());
   }
 
+  @Test
+  public void find_returnsDefinitionWithSameId_secondDefinition() {
+    Definition firstDefinition = new Definition("To eat");
+    Definition secondDefinition = new Definition("To sleep");
+    assertEquals(Definition.find(secondDefinition.getId()), secondDefinition);
+  }
 
+  @Test
+  public void find_returnsNullWhenNoDefinitionFound_null() {
+    assertTrue(Definition.find(999) == null);
+  }
 
-
+  @Test
+  public void clear_emptiesAllDefinitionsFromArrayList() {
+    Definition myDefinition = new Definition("To eat");
+    Definition.clear();
+    assertEquals(Definition.all().size(), 0);
+  }
 
 
 

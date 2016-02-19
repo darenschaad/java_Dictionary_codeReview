@@ -24,10 +24,14 @@ public class Definition {
     return mId;
   }
 
-
-
-
-
+  public static Definition find(int id) {
+    try {
+      return instances.get(id -1);
+    }
+    catch (IndexOutOfBoundsException exception) {
+      return null;
+    }
+  }
 
   public static void clear() {
     instances.clear();
