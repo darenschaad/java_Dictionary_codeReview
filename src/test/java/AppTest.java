@@ -21,9 +21,22 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
+  @Rule
+  public ClearRule clearRule = new ClearRule();
+
   @Test
   public void rootTest() {
       goTo("http://localhost:4567/");
       assertThat(pageSource()).contains("Dictionary");
   }
+
+  @Test
+  public void wordIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add a New Word"));
+    fill("#name").with("Snow");
+    submit(".btn");
+    assertThat(pageSource()).contains("Snow");
+  }
+
 }

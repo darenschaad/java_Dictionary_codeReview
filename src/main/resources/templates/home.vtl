@@ -1,2 +1,14 @@
 home.vtl
 <h1>Dictionary</h1>
+
+
+
+<h2>Words</h2>
+<ul>
+  #foreach($word in $words)
+    <li><h3><a href="/words/$word.getId()">$word.getName()</a></h3></li>
+  #end
+</ul>
+
+
+<a href="words/new">Add a New Word</a>
