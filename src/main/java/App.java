@@ -11,6 +11,7 @@ public class App {
 
     get("/", (request, response) ->{
       HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("words", Word.all());
       model.put("template", "templates/home.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -24,8 +25,9 @@ public class App {
     get("/words/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       Word word = Word.find(Integer.parseInt(request.params(":id")));
-      model.put("definitions", Definition.all());
+      ArrayList<Definition> definitions = word.getDefinitions();
       model.put("word", word);
+      model.put("definitions", definitions);
       model.put("template", "templates/word.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
