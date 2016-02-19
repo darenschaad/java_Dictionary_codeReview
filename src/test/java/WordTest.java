@@ -43,5 +43,17 @@ public class WordTest {
     Word.clear();
     assertEquals(Word.all().size(), 0);
   }
+  @Test
+  public void find_returnsWordWithSameId() {
+    Word myWord = new Word("Snow");
+    assertEquals(Word.find(myWord.getId()), myWord);
+  }
 
+  @Test
+  public void addDefinition_addsDefinitionToArrayList() {
+    Word myWord = new Word("Snow");
+    Definition myDefinition = new Definition("Frozen water falling from the sky");
+    myWord.addDefinition(myDefinition);
+    assertTrue(myWord.getDefinitions().contains(myDefinition));
+  }
 }
