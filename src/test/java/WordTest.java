@@ -11,4 +11,16 @@ public class WordTest {
     assertEquals(true, myWord instanceof Word);
   }
 
+  @Test
+  public void getName_returnsNameOfWord_true() {
+    Word myWord = new Word("Snow");
+    assertEquals("Snow", myWord.getName());
+  }
+
+  @Test
+  public void getId_returnsWordId() {
+    Word myWord = new Word("Snow");
+    assertTrue(Word.all().size() == myWord.getId());
+  }
+
 }
