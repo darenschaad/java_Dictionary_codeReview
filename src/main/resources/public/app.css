@@ -4,3 +4,10 @@
   color: #557A79;
   text-align: center;
 }
+
+#headerText {
+  text-align: center;
+  font-weight: lighter;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}

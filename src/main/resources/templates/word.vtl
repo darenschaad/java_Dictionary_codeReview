@@ -1,5 +1,5 @@
 #if ($definitions.size() != 0)
-<h2>Here are the Definitions for $word.getName()</h2>
+<h2>Definitions for $word.getName():</h2>
 
 <ul>
 #foreach($definition in $definitions)
@@ -17,10 +17,11 @@
 <form action="/words/:id" method="post">
   <input id="wordId" name="wordId" type= "hidden" value="$word.getId()">
   <div class="form-group">
-    <input type="text" name="description" id="description" class="form-control" placeholder="Type your definition here" required>
+    <input type="text" name="description" id="description" class="form-control" placeholder="Type your definition here" required autofocus="autofocus">
   </div>
   <button type="submit" class="btn btn-primary">Add Definition</button>
 </form>
+<br>
 
 
-<h4><a href="/">Return to Main Page</a></h4>
+<a href="/" type="button" class="btn btn-success" id="homeButton">Return to Main Page</a>
