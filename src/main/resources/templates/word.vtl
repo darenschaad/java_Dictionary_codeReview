@@ -1,0 +1,21 @@
+word.vtl
+<h2>Here are the Definitions for $word.getName()</h2>
+
+<ul>
+#foreach($definition in $definitions)
+  <li><h3>$definition.getDescription()</h3></li>
+#end
+</ul>
+
+<h4>Add a definition for this word:</h4>
+<form action="/words/:id" method="post">
+  <input id="wordId" name="wordId" type= "hidden" value="$word.getId()">
+  <div class="form-group">
+    <label for="description">list your definition for this word</label>
+    <input type="text" name="description" id="description" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-success">Add Definition</button>
+</form>
+
+
+<a href="/">Return to Main Page</a>
