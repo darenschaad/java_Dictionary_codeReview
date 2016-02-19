@@ -23,4 +23,25 @@ public class WordTest {
     assertTrue(Word.all().size() == myWord.getId());
   }
 
+  @Test
+  public void getDefinitions_initiallyReturnsEmptyArrayList() {
+    Word myWord = new Word("Snow");
+    assertTrue(myWord.getDefinitions() instanceof ArrayList);
+  }
+
+  @Test
+  public void all_returnsAllInstancesOfWord_true() {
+    Word firstWord = new Word("Snow");
+    Word secondWord = new Word("Ice");
+    assertTrue(Word.all().contains(firstWord));
+    assertTrue(Word.all().contains(secondWord));
+  }
+
+  @Test
+  public void clear_removesAllWordInstancesFromMemory() {
+    Word myWord = new Word("Snow");
+    Word.clear();
+    assertEquals(Word.all().size(), 0);
+  }
+
 }
