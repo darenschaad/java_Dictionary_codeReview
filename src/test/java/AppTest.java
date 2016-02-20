@@ -35,7 +35,7 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/");
     click("a", withText("Add a New Word"));
     fill("#name").with("Snow");
-    submit(".btn");
+    submit("#addWord");
     assertThat(pageSource()).contains("Snow");
   }
 
@@ -43,10 +43,10 @@ public class AppTest extends FluentTest {
   public void definitionIsCreatedForAWordTest() {
     goTo("http://localhost:4567/words/new");
     fill("#name").with("Snow");
-    submit(".btn");
+    submit("#addWord");
     click("a", withText("Snow"));
     fill("#description").with("Snow definition");
-    submit(".btn");
+    submit("#addDefinition");
     assertThat(pageSource()).contains("Snow definition");
   }
 

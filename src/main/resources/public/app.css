@@ -11,3 +11,22 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
 }
+.btn {
+  color: white;
+  background-color: #0A6865;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #23B5AF;
+}
+
+#homeButton {
+  color: white;
+  background-color: #23B5AF;
+}
+
+#homeButton:hover {
+  color: white;
+  background-color: #0A6865;
+}
